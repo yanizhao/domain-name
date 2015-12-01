@@ -1,5 +1,7 @@
 #READ ME
 
+*Updated: Tuesday, Dec. 1, 2015 to reflect changes to NameCheap's interface.*
+
 ## Registering a Domain Name
 
 1. Visit [NameCheap](https://nc.me/). (A .me domain is free for one year if you have a university email account.)
@@ -16,33 +18,42 @@
 
 4. Visit NameCheap.com and log in.
 
-5. Under 'Account Information' select view next to 'Number of domains in your account'.
+5. Click 'Domain List' on the left side menu.
 
-6. Click on your domain name.
+6. Next to your domain name, click the 'Manage' button.
 
-7. On the left side, under 'Host Management', select 'All Host Records'.
+7. Click "Advanced DNS" in the menu bar.
 
-8. The settings should be as follows (username is *your* username):
+8. If you set up the domain to use GitHub, your A record settings should match the details below. You will only need to change your CNAME record (username is *your* username). Be sure to SAVE the records by clicking the green checkmark on the far right of each record.
 
 <table>
   <tr>
+    <th>Type</th>
+    <th>Host</th>
+    <th>Value</th>
+    <th>TTL</th>
+  </tr>
+  <tr>
+    <td>A Record</td>
     <td>@</td>
     <td>192.30.252.153</td>
-    <td>A</td>
+    <td>30 min</td>
   </tr>
   <tr>
+    <td>A Record</td>
     <td>@</td>
     <td>192.30.252.154</td>
-    <td>A</td>
+    <td>30 min</td>
   </tr>
   <tr>
+    <td>CNAME</td>
     <td>www</td>
     <td>username.github.io</td>
-    <td>CNAME</td>
+    <td>30 min</td>
   </tr>
 </table>
 
-9. Open Atom (or Brackets) and type your domain name (do not start it with www) in a plain text file. Save this as "CNAME" (not CNAME.txt or CNAME.html -- just CNAME).
+9. Open Atom (or Brackets) and type your domain name (do not start it with www; i.e. domain.com) in a plain text file. Save this as "CNAME" (not CNAME.txt or CNAME.html -- just CNAME).
 
 10. Add the CNAME file to the username.github.io repo on your computer, commit it and push it to GitHub.
 
